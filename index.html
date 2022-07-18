@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<style>
+Form{text-align:center;background:blue;margin-left:450px;width:500px;border:100;}
+.a{width:200px}
+.b{width:200px}
+.c{width:200px}
+.d{width:200px}
+.e{width:200px}
+
+</style>
+</head>
+<body>
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+  if(empty($_POST["Firstname"])){
+    echo "Firstname is required"."</br>";
+    } else 
+      { $name=test_input($_POST["Firstname"]);
+  }
+}
+  
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["Lastname"])){
+      echo "Lastname  is required"."</br>";
+      } else 
+        { $name=test_input($_POST["Lastname"]);
+    }
+  }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+      if(empty($_POST["Password"])){
+        echo "Password is required"."</br>";
+        } else 
+          { $name=test_input($_POST["Password"]);
+      }
+    }
+
+      if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["Email"])){
+          echo "Email is required"."</br>";
+          } else 
+            { $name=test_input($_POST["Email"]);
+        }
+  
+}
+
+
+
+
+
+if (isset($_POST['butt'])){
+  $Firstname=$_POST["Firstname"];
+if(! empty($Firstname)){
+ echo "Your Firstname is".' ' .$Firstname."</br>";
+} 
+
+  $Lastname=$_POST["Lastname"]; 
+  if(! empty($Lastname)){
+  echo "Your lastname is".' '.$Lastname."</br>";
+  }
+
+  $Password=$_POST["Password"]; 
+  if(! empty($Password)){
+  echo "Your Password is".' '.$Password."</br>";
+  }
+
+  $Email=$_POST["Email"]; 
+  if(! empty($Email)){
+  echo "Your Email is".' '.$Email."</br>";
+  }
+
+
+/*if(empty($Firstname) and (empty($Lastname)) and  (empty($Password)) and (empty($Email)) )
+//{ echo "All values are required";
+}*/   
+}
+  ?>
+
+<form method= "POST">
+  
+<input class="a" type="text" name="Firstname" placeholder="Firstname" /> <br>
+<input class="b" type="text" name="Lastname" placeholder="Lastname" /> <br>
+<input class="c" type="password" name="Password" placeholder="Password" /> <br>
+<input class="d" type="email" name="Email" placeholder="Email" /> <br>
+<button name="butt"> login </button>
+</form>
+
+
+
+
+
+
+</body>
+</html>
